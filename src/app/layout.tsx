@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-
+import QueryProvider from "@/providers/QueryProvider";
 import "./globals.css";
 
 
@@ -19,7 +19,9 @@ export default function RootLayout({
       <body
         className=""
       >
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
